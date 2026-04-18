@@ -1,0 +1,32 @@
+# =====================================================
+# WhatsApp AI Agent — .gitignore
+# =====================================================
+
+# ── Variáveis de ambiente (NUNCA commitar!) ──────────
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ── Node / Deno ──────────────────────────────────────
+node_modules/
+.deno/
+
+# ── Supabase ─────────────────────────────────────────
+.supabase/
+
+# ── OS ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Logs ─────────────────────────────────────────────
+*.log
+npm-debug.log*
