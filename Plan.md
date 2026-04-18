@@ -94,17 +94,28 @@ npx supabase functions deploy whatsapp-webhook --no-verify-jwt
 
 ## ETAPA 5 — Teste do Sistema
 
-- [ ] Criar script de teste local (`test.ts`)
-- [ ] Testar com payload simulado da Z-API
+- [x] Criar script de teste local (`test.ts`) — 4 cenários de teste
+- [ ] Testar com payload simulado da Z-API (precisa da Edge Function rodando)
 - [ ] Verificar se a mensagem aparece no banco de dados
 - [ ] Verificar se o Gemini responde corretamente
 - [ ] Verificar se a resposta chega via Z-API
+
+📄 Arquivo: `test.ts`
+
+### Como rodar os testes:
+```powershell
+# 1. Subir a Edge Function localmente
+npx supabase functions serve whatsapp-webhook --env-file .env
+
+# 2. Em outro terminal, rodar o teste
+npx deno run --allow-net test.ts
+```
 
 ---
 
 ## ETAPA 6 — Checklist Final
 
-- [ ] Banco de dados com tabelas criadas e funcionando
+- [x] Banco de dados com tabelas criadas e funcionando
 - [ ] Edge Function deployada e acessível
 - [ ] Variáveis de ambiente configuradas
 - [ ] Webhook da Z-API apontando para a Edge Function
@@ -115,9 +126,13 @@ npx supabase functions deploy whatsapp-webhook --no-verify-jwt
 
 ## 📌 Próximo Passo
 
-**→ ETAPA 3: Deploy da Edge Function**
+**→ ETAPA 3: Deploy da Edge Function** ⏸️ (aguardando variáveis de ambiente)
 
-Preciso dos valores das variáveis de ambiente para montar os comandos.
+Quando tiver as chaves, preciso dos valores de:
+- `Project Ref` do Supabase
+- `GEMINI_API_KEY`
+- `ZAPI_INSTANCE_ID`, `ZAPI_TOKEN`, `ZAPI_CLIENT_TOKEN`
+- `BOT_SYSTEM_PROMPT`
 
 ---
 
