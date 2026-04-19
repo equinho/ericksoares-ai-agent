@@ -122,7 +122,7 @@ npx deno run --allow-net test.ts
 - [x] Variáveis de ambiente configuradas
 - [x] Dashboard web no ar — <https://dashboard-liart-phi-86.vercel.app>
 - [x] Webhook da Z-API apontando para a Edge Function
-- [x] Teste de ponta a ponta: mensagem → Gemini → resposta automática ✅
+- [ ] Teste de ponta a ponta: mensagem → Gemini → resposta automática (Gemini responde via curl, mas bot não respondeu no WhatsApp — Z-API a verificar)
 - [ ] Verificar logs da Edge Function sem erros
 
 ---
